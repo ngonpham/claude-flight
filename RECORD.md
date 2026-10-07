@@ -242,3 +242,21 @@ drop NaN, Inf and negative taps, checked on the bits because fast-math compilers
 The exposure feedback loop can't keep a NaN. Tests: a repo-wide lint (no `pow()` of a bare varying)
 and browser e2e tests for the repro and for a forced NaN. Lesson: any full-screen blur turns one bad
 pixel into a visible block, so every post pass that reads the scene must sanitise its input.
+
+## 2026-10-07 — Pacific 1942 (Bắn Máy Bay): a second game on `pacific.html`
+
+- A ten-level vertical shooter of the Pacific War, Vietnamese UI, Pearl Harbor → Okinawa, each
+  level with a sourced briefing and a boss. Same principles as the simulator: pure seeded
+  simulation (`src/pacific/sim/`), drawing kept apart (`src/pacific/render/`), one config object,
+  procedural models / sound only. Built as a second Vite input so it ships next to the simulator.
+- Perspective vs. hit tests: the sea layer is a group scaled about the camera position, so sea
+  level projects exactly onto the aircraft plane — ships and gun sites are hit where they are seen.
+- The camera fit first diverged (the centring step had the wrong sign): every frame was fog.
+  Caught by the first screenshot; the fit is a bisection on distance with a centring pass.
+- The fuzz test of the wave builder found real gaps of 20–45 s without a bonus formation: set
+  pieces were added before the random waves, so the spacing counter ran ahead in time. Fixed by
+  merging set pieces in time order and letting any formation carry an overdue bonus.
+- Balance is checked by the autopilot (`botInput()`): with god mode it must shoot every boss down
+  before it escapes, from the level select's pilot; Pearl Harbor on Easy must be survivable
+  without it.
+

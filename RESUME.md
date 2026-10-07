@@ -18,6 +18,10 @@ Last updated: 2026-09-23 · release candidate for open-sourcing · `main` is the
 
 ## 0. The 60-second version
 
+- **New (2026-10-07): a second game, Pacific 1942 — Bắn Máy Bay**, on `pacific.html`: a ten-level
+  arcade shooter of the Pacific War (Vietnamese UI), its own code in `src/pacific/` and tests in
+  `tests/pacific/`. It shares only three.js with the simulator. See `docs/PACIFIC_1942.md`.
+
 - **Four aircraft**, picked from the dropdown at the top right (or `?aircraft=c172rg|f16|a10|b747`):
   Cessna 172RG, F-16C, A-10C and a Boeing 747-400 (flown light, ~220 t). Each has its own
   calibrated 6-DOF flight model, 3D model, realistic cockpit (the 747: a glass flight deck with live

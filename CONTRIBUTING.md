@@ -11,6 +11,7 @@ code fits together.
 - [Adding vehicles and targets](docs/ADDING_VEHICLES_AND_TARGETS.md) (range targets, enemy aircraft, road traffic)
 - [Adding boats](docs/ADDING_BOATS.md)
 - [Adding land features](docs/ADDING_LAND_FEATURES.md) (landmarks, new world systems, towns, roads, water, runways)
+- [Pacific 1942](docs/PACIFIC_1942.md) (the arcade game on `pacific.html`: levels, enemies, bosses)
 - [Testing](docs/TESTING.md) (the test layers, fuzzing, the test browser)
 
 ## Set up

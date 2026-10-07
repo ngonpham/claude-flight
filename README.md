@@ -152,6 +152,32 @@ distance. To start right there, add `?aircraft=a10&spawn=range` to the address.
   counts your rounds, Mavericks, Sidewinders and **kills**, and every kill pops up a message such
   as "T-72B destroyed — GAU-8".
 
+## Pacific 1942: Bắn Máy Bay (the arcade game)
+
+The repository has a second game: **Pacific 1942 — Bắn Máy Bay** ("shoot down the planes"), a
+ten-level vertical-scrolling shooter set in the Pacific War, in Vietnamese. Fly a **P-38
+Lightning**, **F6F Hellcat** or **F4U Corsair** from Pearl Harbor (7 December 1941) to the sinking
+of the Yamato (7 April 1945): Wake, Coral Sea, Midway, Guadalcanal at night, the interception of
+Yamamoto's G4M over Bougainville, the Philippine Sea, Leyte Gulf in the rain, Iwo Jima and Okinawa,
+each with a historical briefing and a boss — carriers that launch aircraft, battleships with
+turrets to knock out one by one, a flying boat, the Suribachi fortress. Same stack as the
+simulator (Three.js, every model and sound made in code), its own page:
+
+- `npm start`, then open **http://127.0.0.1:8092/pacific.html** (the build puts it in `dist/` too).
+- Arrows or <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> fly, <kbd>Space</kbd> fires,
+  <kbd>X</kbd> rolls out of the line of fire, <kbd>P</kbd> pauses, <kbd>M</kbd> mutes. On a phone,
+  drag to fly (it fires on its own). Gamepads work too.
+
+| | |
+| --- | --- |
+| ![Pacific 1942: a P-38 over Pearl Harbor at dawn, Battleship Row burning beside Ford Island](docs/screenshots/pacific-pearl-harbor.jpg) | ![Pacific 1942: Yamamoto's G4M Betty and its escort of Zeros over Bougainville](docs/screenshots/pacific-vengeance.jpg) |
+| **Level 1, Pearl Harbor.** Zeros over Battleship Row. | **Level 6, Operation Vengeance.** The G4M T1-323 and six Zeros. |
+| ![Pacific 1942: an F6F Hellcat attacks the carrier Akagi at Midway](docs/screenshots/pacific-midway.jpg) | ![Pacific 1942: an F4U Corsair against the battleship Yamato at dusk off Okinawa](docs/screenshots/pacific-yamato.jpg) |
+| **Level 4, Midway.** The carrier Akagi launching her Zeros. | **Level 10, Okinawa.** The Yamato's last sortie. |
+
+How it is built, how to add a level, an enemy or a boss, and its tests:
+[docs/PACIFIC_1942.md](docs/PACIFIC_1942.md).
+
 ## Controls
 
 | Action | Keys |
@@ -317,6 +343,7 @@ src/
   game/          main loop, window.sim, and systems/ (one plug-in per feature)
   render/        renderer, sky, atmosphere, clouds, tone mapping
   input/  camera/  ui/  audio/  fx/  crash/
+  pacific/       Pacific 1942, the arcade game (pacific.html): sim/ (pure rules), render/ (3D), screens, sound
 tests/           mirrors src/; plus fuzz/, functional/, e2e/, repo/ and support/
 scripts/         screenshot tool, scripted QA pilot, repo map generator
 preview/         one page per module (terrain, towns, aircraft, HUD…) for working on it alone
@@ -335,6 +362,7 @@ then pick a guide:
 - [Adding boats](docs/ADDING_BOATS.md) — ships, yachts and ferries, their routes and wakes.
 - [Adding land features](docs/ADDING_LAND_FEATURES.md) — terrain, towns, landmarks, runways and new world systems.
 - [Testing](docs/TESTING.md) — the test layers, fuzzing and the test browser.
+- [Pacific 1942](docs/PACIFIC_1942.md) — the arcade game: how it is built, adding levels, enemies and bosses.
 
 Please follow the [Code of Conduct](CODE_OF_CONDUCT.md). To report a security problem, see
 [SECURITY.md](SECURITY.md).

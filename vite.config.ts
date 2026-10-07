@@ -13,7 +13,7 @@ export default defineConfig({
     // Agent worktrees live under .worktrees/ — never watch or scan them from the main server.
     watch: { ignored: [`${root}.worktrees/**`, `${root}qa/**`] },
   },
-  optimizeDeps: { entries: ['index.html', 'preview/*.html'] },
+  optimizeDeps: { entries: ['index.html', 'pacific.html', 'preview/*.html'] },
   preview: { host: '127.0.0.1', port: 8092, strictPort: true },
   // Relative asset URLs are resolved against `base`: build with `--base=/<repository>/` for GitHub
   // project pages (see .github/workflows/pages.yml); workers use new URL(…, import.meta.url), so they
@@ -24,6 +24,8 @@ export default defineConfig({
     // and the game, loaded by the entry with a dynamic import.
     chunkSizeWarningLimit: 1600,
     rolldownOptions: {
+      // Two pages: the flight simulator and the Pacific 1942 arcade game (they share the three chunk).
+      input: { main: `${root}index.html`, pacific: `${root}pacific.html` },
       output: {
         codeSplitting: {
           groups: [{ name: 'three', test: /[\\/]node_modules[\\/]three[\\/]/ }],

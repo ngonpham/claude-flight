@@ -491,6 +491,20 @@ impostors for trees, frustum and distance culling, object pools (particles, tree
 per-frame allocations in hot paths, a capped pixel ratio with dynamic resolution, and per-system
 CPU timings to find what's slow. The measured flight in RECORD.md averaged 59.9 fps.
 
+## 15b. The second page: Pacific 1942 (src/pacific)
+
+`pacific.html` is a separate game — a ten-level arcade shooter of the Pacific War, in Vietnamese —
+built with the same tools and rules but sharing no code with the simulator except three.js (the
+build gives it its own small chunk next to the shared three.js chunk). Its layout mirrors the
+simulator's split: data (`src/pacific/levels.ts`, `src/pacific/enemies.ts`,
+`src/pacific/bosses.ts`, one `PACIFIC` config in `src/pacific/config.ts`); a pure, seeded
+simulation in `src/pacific/sim/` stepped at 120 Hz (`stepGame()`), which reports what happened as
+events; drawing in `src/pacific/render/`, which mirrors the state and turns events into effects;
+and the screens, sound and controls around them. Sea-level objects live in a group scaled about
+the camera so they project exactly under the playfield the aircraft fly on. The whole story —
+the ten battles, how to add a level or boss, the tests — is in
+[docs/PACIFIC_1942.md](docs/PACIFIC_1942.md).
+
 ## 16. How the project was built
 
 Test-first, by an AI orchestrator running waves of up to ten Opus sub-agents in parallel, each in
