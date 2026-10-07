@@ -14,7 +14,10 @@ with its escort, a four-engine flying boat and the fortress of Mount Suribachi.
 ## Play it
 
 `npm start`, then open **http://127.0.0.1:8092/pacific.html**. The production build
-(`npm run build`) puts it next to the simulator in `dist/`.
+(`npm run build`) puts it next to the simulator in `dist/`. `npm run build:pacific-file` makes
+**one self-contained HTML file**, `dist/pacific-standalone.html` (about 720 KB: the game, three.js
+and the styles inlined) that plays opened straight from disk or sent to someone
+(`scripts/pacific-standalone.mjs`).
 
 | Keys | What they do |
 | --- | --- |

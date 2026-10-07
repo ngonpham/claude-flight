@@ -164,6 +164,7 @@ turrets to knock out one by one, a flying boat, the Suribachi fortress. Same sta
 simulator (Three.js, every model and sound made in code), its own page:
 
 - `npm start`, then open **http://127.0.0.1:8092/pacific.html** (the build puts it in `dist/` too).
+  `npm run build:pacific-file` makes a single HTML file that plays offline, opened from disk.
 - Arrows or <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> fly, <kbd>Space</kbd> fires,
   <kbd>X</kbd> rolls out of the line of fire, <kbd>P</kbd> pauses, <kbd>M</kbd> mutes. On a phone,
   drag to fly (it fires on its own). Gamepads work too.
